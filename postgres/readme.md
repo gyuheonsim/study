@@ -32,6 +32,13 @@ psql
     GRANT ALL PRIVILEGES ON DATABASE mydbname TO myusername;
     ```
 
+* password 에러 발생 시!!
+
+    ```psql
+    \password
+    ```
+
+
 * Postgres의 구조
     ![structure of postgres](./structure_of_postgres.png)
 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <ul>
+        <li>test2</li>
+    </ul>
+    <ul class="foo">
+        <li>test</li>
+    </ul>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+    // $를 함수의 지역변수로 선언해서 외부에 있을지 모르는 타 라이브러리의 $와의 충돌 예방
+//    jQuery('body').html('hello world');
+
+//    (function($){
+//        // jQuery 코드가 위치함
+//        $('body').html('hello world');
+//    })(jQuery)
+
+// jQuery(~~~)에서 jQuery()가 래퍼, 인자로 전달된 요소들에 jQuery의 기능성을 부가해서 반환
+// 제어 대상 지정 방법. 1. jQuery(selector, [context])
+    (function($){
+        $('ul.foo').click(function(){
+            $('li',this).css('background-color', 'red');  // this가 context
+        });
+    })(jQuery)
+
+// 2. jQuery(element)
+    jQuery(document.body).css("background-color", "blue");
+
+</script>
+</body>
+</html>

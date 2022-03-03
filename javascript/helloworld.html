@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <ul>
+            <li>a</li>
+            <li>b</li>
+            <li>c</li>
+        </ul>
+        <script>
+            // 익명 함수
+            (function(){
+                for(var i=0;i<10;i++){
+                    document.write(i);
+                }
+            })();
+            
+            // Object
+            var li = ['a', 'b', 'c', 'd'];
+            li.splice(2,0,'x')
+            console.log(li);
+            li.sort();
+            console.log(li);
+
+            var grades = {
+                'asd' : {},
+                'show': function(){
+                    for(var key in this.asd){
+                        console.log(key);
+                        console.log(this.asd[key]);
+                    }
+                }
+            };
+            (grades['asd'])['asd'] = 10;
+            grades['asd']['wqeq'] = 15;
+            grades['show']();
+
+            var grade2 = new grades;
+        </script>
+    </body>
+</html>
